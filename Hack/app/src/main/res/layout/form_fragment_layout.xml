@@ -50,6 +50,20 @@
             android:textSize="@dimen/editable_text"/>
 
         <TextView
+            android:id="@+id/form_contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/heading"
+            android:text="Contact Number"
+            android:textColor="@color/hackTheme"/>
+
+        <EditText
+            android:id="@+id/form_contact_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/editable_text"/>
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Address"

@@ -159,6 +159,7 @@ public class FormFragment extends Fragment {
 
         final EditText heading = (EditText) rootView.findViewById(R.id.amenities_form_heading);
         Button submit = rootView.findViewById(R.id.submit_button);
+        final EditText contact = (EditText) rootView.findViewById(R.id.form_contact_text);
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -167,6 +168,7 @@ public class FormFragment extends Fragment {
                 post.heading = heading.getEditableText().toString();
                 post.description = description.getEditableText().toString();
                 post.address = address.getEditableText().toString();
+                post.contact = contact.getEditableText().toString();
 
                 Geocoder geocoder = new Geocoder(getContext());
                 List<Address> addresses = new ArrayList<>();
