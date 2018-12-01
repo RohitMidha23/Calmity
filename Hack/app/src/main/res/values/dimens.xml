@@ -2,5 +2,7 @@
 <resources>
     <dimen name="heading">15sp</dimen>
     <dimen name="editable_text">12sp</dimen>
+    <dimen name="main_heading">25sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 
 </resources>

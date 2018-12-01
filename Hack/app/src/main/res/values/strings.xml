@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Hack</string>
+    <string name="title_activity_post_expanded">PostExpanded</string>
 </resources>

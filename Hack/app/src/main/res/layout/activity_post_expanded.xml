@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PostExpanded"
+    android:layout_margin="15dp">
+
+    <TextView
+        android:id="@+id/expanded_post_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/hackTheme"
+        android:textSize="@dimen/main_heading"
+        android:text="Heading test"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:layout_below="@+id/expanded_post_heading"
+        android:id="@+id/expanded_post_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:textSize="@dimen/editable_text"
+        android:layout_alignParentRight="true"
+        android:text="distance test"/>
+
+    <TextView
+        android:id="@+id/expanded_post_description_heading"
+        android:layout_below="@id/expanded_post_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/main_heading"
+        android:textColor="@color/hackTheme"
+        android:text="Description"/>
+
+    <TextView
+        android:layout_below="@id/expanded_post_description_heading"
+        android:id="@+id/expanded_post_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/editable_text"
+        android:text="Description test"/>
+
+    <TextView
+        android:id="@+id/expanded_post_conatct_heading"
+        android:layout_below="@id/expanded_post_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact No: "
+        android:textColor="@color/hackTheme"
+        android:textSize="@dimen/heading"/>
+
+    <TextView
+        android:layout_below="@id/expanded_post_description"
+        android:layout_toRightOf="@id/expanded_post_conatct_heading"
+        android:id="@+id/expanded_post_contact_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/heading"
+        android:text="+910000000000"
+        />
+
+    <ImageView
+        android:layout_below="@id/expanded_post_description"
+        android:id="@+id/expanded_post_map_snapshot"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"/>
+    <TextView
+        android:layout_below="@id/expanded_post_map_snapshot"
+        android:id="@+id/expanded_post_googlemap_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click to open in google maps"
+        android:textColor="@color/hackTheme"
+        android:textSize="12sp"
+        android:layout_centerHorizontal="true"/>
+
+
+
+</RelativeLayout>

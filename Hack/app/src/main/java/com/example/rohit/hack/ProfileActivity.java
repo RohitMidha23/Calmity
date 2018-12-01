@@ -1,13 +1,20 @@
 package com.example.rohit.hack;
 
 import android.animation.Animator;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +24,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -26,8 +34,13 @@ import android.widget.Toolbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-class Post {
-    String heading,description,address,pid;
+import java.io.IOException;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+class Post implements Serializable {
+    String heading,description,address,pid,contact;
     Double lat,lon,distancetoPost;
 }
 
@@ -35,7 +48,11 @@ public class ProfileActivity extends AppCompatActivity {
 
     static int radiusOfSearch = 7;
 
+    static boolean searching = false;
+
     static int fabOptionClicked;
+
+    static int activitySelected = 1;
 
     //Firebase auth object //
     private FirebaseAuth firebaseAuth;
@@ -48,6 +65,8 @@ public class ProfileActivity extends AppCompatActivity {
     private int fab_clicked = 0;
     private boolean formOnScreen = false;
 
+    EditText search;
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -56,12 +75,15 @@ public class ProfileActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
+                    activitySelected = 1;
                     fragment = new AmenitiesFragment();
                     break;
                 case R.id.navigation_dashboard:
+                    activitySelected = 2;
                     fragment = new SOSFragment();
                     break;
                 case R.id.navigation_notifications:
+                    activitySelected = 3;
                     fragment = new VolunteerFragment();
                     break;
             }
@@ -91,6 +113,7 @@ public class ProfileActivity extends AppCompatActivity {
         fab_clicked = 0;
 
     }
+
 
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -123,6 +146,8 @@ public class ProfileActivity extends AppCompatActivity {
         //Add Listener to Button //
         //buttonLogout.setOnClickListener(this);
 
+        search  = (EditText) findViewById(R.id.search_bar);
+
         //Creating button Navigation object //
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -140,6 +165,8 @@ public class ProfileActivity extends AppCompatActivity {
         final LinearLayout fab_amenities_layout = (LinearLayout) findViewById(R.id.fab_amenities_layout);
         final LinearLayout fab_sos_layout = (LinearLayout) findViewById(R.id.fab_sos_layout);
         final LinearLayout fab_volunteer_layout = (LinearLayout) findViewById(R.id.fab_volunteer_layout);
+
+
 
         //Translucent Background Created //
         final View trans_bg = findViewById(R.id.translucent_bg);
@@ -283,6 +310,8 @@ public class ProfileActivity extends AppCompatActivity {
                 loadFragment(fragment,1);
             }
         });
+
+
     }
 
     @Override
@@ -305,6 +334,43 @@ public class ProfileActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.toolbar_settings)
             startActivity(new Intent(this,Settings.class));
+        else if(item.getItemId() == R.id.search_toolbar_icon) {
+            if(search.getVisibility() == View.INVISIBLE) {
+                search.setVisibility(View.VISIBLE);
+                searching = true;
+
+            }
+            else if(search.getVisibility() == View.VISIBLE) {
+
+                Geocoder geocoder = new Geocoder(getApplicationContext());
+                List<Address> addresses = new ArrayList<>();
+                try {
+                    addresses = geocoder.getFromLocationName(search.getEditableText().toString(),1);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                Address location = addresses.get(0);
+                Log.i("COMEON",String.valueOf(activitySelected));
+                if(activitySelected == 1) {
+                    AmenitiesFragment.currentUserLocation = new Location("");
+                    AmenitiesFragment.currentUserLocation.setLatitude(location.getLatitude());
+                    AmenitiesFragment.currentUserLocation.setLongitude(location.getLongitude());
+                }
+                else if(activitySelected == 2) {
+                    SOSFragment.currentUserLocation = new Location("");
+                    SOSFragment.currentUserLocation.setLatitude(location.getLatitude());
+                    SOSFragment.currentUserLocation.setLongitude(location.getLongitude());
+                }
+
+                loadFragment(fragment,0);
+                search.setVisibility(View.INVISIBLE);
+
+
+
+            }
+
+        }
+
         return super.onOptionsItemSelected(item);
     }
 }
