@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="heading">15sp</dimen>
+    <dimen name="editable_text">12sp</dimen>
+
+</resources>

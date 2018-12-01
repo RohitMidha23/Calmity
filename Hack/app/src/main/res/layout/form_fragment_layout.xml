@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/amenities_form"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true">
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:background="@drawable/form_background">
+
+        <TextView
+            android:id="@+id/form_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amenities"
+            android:textSize="35sp"
+            android:textColor="@color/hackTheme"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textColor="@color/hackTheme"
+            android:textSize="@dimen/heading"/>
+
+        <EditText
+            android:id="@+id/amenities_form_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Heading for post"
+            android:textSize="@dimen/editable_text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/heading"
+            android:text="Description"
+            android:textColor="@color/hackTheme"/>
+
+        <EditText
+            android:id="@+id/amenities_form_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Write a brief description"
+            android:textSize="@dimen/editable_text"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textSize="@dimen/heading"
+            android:textColor="@color/hackTheme" />
+
+        <EditText
+            android:id="@+id/amenities_form_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/editable_text"
+            android:hint="Enter address"/>
+
+
+
+        <RadioButton
+            android:id="@+id/current_location_radiobutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Use Current Location(Requires GPS)"
+            android:textColor="@color/hackTheme"/>
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:textColor="@color/hackTheme"
+            android:background="@drawable/form_submit_button"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

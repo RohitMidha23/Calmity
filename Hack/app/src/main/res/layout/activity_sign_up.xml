@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:hint="Enter Email"
+
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/Password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:hint="Enter Password"
+            android:layout_below="@+id/Email"
+            android:layout_above="@+id/BRegister"
+            android:layout_gravity="left"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/BRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="80dp"
+            android:layout_below="@+id/Password"
+            android:layout_gravity="center"
+            android:text="Sign Up" />
+
+    <TextView
+        android:id="@+id/SignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go to Login Page"
+        android:layout_below="@+id/BRegister"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:textSize="25dp"
+        />
+    </LinearLayout>
+</RelativeLayout>
+

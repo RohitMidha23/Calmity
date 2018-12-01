@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "642425917998",
+    "firebase_url": "https://hack-7b905.firebaseio.com",
+    "project_id": "hack-7b905",
+    "storage_bucket": "hack-7b905.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:642425917998:android:eb655709c1d596b7",
+        "android_client_info": {
+          "package_name": "com.example.rohit.hack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "642425917998-3maferj7kjd33nnl6vd1io5tlsu5ei09.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rohit.hack",
+            "certificate_hash": "8dbee463248a4b0634f9166b73bc300f963c59df"
+          }
+        },
+        {
+          "client_id": "642425917998-spqvk8l3kdsaonhq5c5l57o62e3ucg0l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBelCWZkJlkp0OzqHtLnweV0hRtXavIV9U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "642425917998-spqvk8l3kdsaonhq5c5l57o62e3ucg0l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
