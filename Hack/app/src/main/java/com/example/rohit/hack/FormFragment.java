@@ -64,6 +64,15 @@ public class FormFragment extends Fragment {
 
     }
 
+    /*private void removeForm() {
+        getActivity().getSupportFragmentManager().beginTransaction().setCustomAnimations(R.animator.form_disappear,R.animator.form_disappear).remove(ProfileActivity.fragment).commit();
+        getActivity().findViewById(R.id.navigation).animate().translationYBy(-150);
+        getActivity().findViewById(R.id.navbar_drop_shadow).animate().translationYBy(-150);
+        getActivity().findViewById(R.id.translucent_bg).setVisibility(View.GONE);
+        ProfileActivity.formOnScreen = false;
+        ProfileActivity.fab_clicked = 0;
+    }*/
+
 
     @Nullable
     @Override
@@ -183,6 +192,8 @@ public class FormFragment extends Fragment {
 
                 post.pid = db.push().getKey();
                 db.child(post.pid).setValue(post);
+                Toast.makeText(getContext(), "Form Submitted, press back to exit", Toast.LENGTH_SHORT).show();
+
             }
         });
 

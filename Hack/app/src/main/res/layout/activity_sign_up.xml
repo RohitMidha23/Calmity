@@ -7,7 +7,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="@dimen/main_heading"
+            android:textColor="@color/hackTheme"
+            />
+
+        <!--<EditText
+            android:id="@+id/first_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:hint="Enter first name"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:hint="Enter last name"/> -->
 
         <EditText
             android:id="@+id/Email"
@@ -36,17 +59,20 @@
             android:layout_marginHorizontal="80dp"
             android:layout_below="@+id/Password"
             android:layout_gravity="center"
-            android:text="Sign Up" />
+            android:text="Sign Up"
+            android:textColor="@color/hackTheme"
+            android:background="@drawable/form_submit_button"/>
 
     <TextView
         android:id="@+id/SignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go to Login Page"
+        android:text="Click here to go to Login Page"
+        android:textColor="@color/hackTheme"
         android:layout_below="@+id/BRegister"
         android:layout_gravity="center"
         android:layout_margin="15dp"
-        android:textSize="25dp"
+        android:textSize="20dp"
         />
     </LinearLayout>
 </RelativeLayout>

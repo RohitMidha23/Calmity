@@ -8,6 +8,7 @@
     android:layout_margin="15dp">
 
     <TextView
+        android:layout_margin="15dp"
         android:id="@+id/expanded_post_heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -16,57 +17,52 @@
         android:text="Heading test"
         android:layout_centerHorizontal="true"/>
 
-    <TextView
-        android:layout_below="@+id/expanded_post_heading"
-        android:id="@+id/expanded_post_distance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:textSize="@dimen/editable_text"
-        android:layout_alignParentRight="true"
-        android:text="distance test"/>
 
     <TextView
+        android:layout_margin="15dp"
         android:id="@+id/expanded_post_description_heading"
         android:layout_below="@id/expanded_post_heading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/main_heading"
+        android:textSize="27sp"
         android:textColor="@color/hackTheme"
         android:text="Description"/>
 
     <TextView
+        android:layout_marginLeft="15dp"
         android:layout_below="@id/expanded_post_description_heading"
         android:id="@+id/expanded_post_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/editable_text"
+        android:textSize="25sp"
         android:text="Description test"/>
 
     <TextView
+        android:layout_margin="15dp"
         android:id="@+id/expanded_post_conatct_heading"
         android:layout_below="@id/expanded_post_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Contact No: "
         android:textColor="@color/hackTheme"
-        android:textSize="@dimen/heading"/>
+        android:textSize="17sp"/>
 
     <TextView
+        android:layout_marginTop="15dp"
         android:layout_below="@id/expanded_post_description"
         android:layout_toRightOf="@id/expanded_post_conatct_heading"
         android:id="@+id/expanded_post_contact_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/heading"
+        android:textSize="17sp"
         android:text="+910000000000"
         />
 
     <ImageView
-        android:layout_below="@id/expanded_post_description"
+        android:layout_below="@id/expanded_post_conatct_heading"
         android:id="@+id/expanded_post_map_snapshot"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_centerHorizontal="true"/>
     <TextView
         android:layout_below="@id/expanded_post_map_snapshot"
@@ -75,7 +71,7 @@
         android:layout_height="wrap_content"
         android:text="Click to open in google maps"
         android:textColor="@color/hackTheme"
-        android:textSize="12sp"
+        android:textSize="15sp"
         android:layout_centerHorizontal="true"/>
 
 

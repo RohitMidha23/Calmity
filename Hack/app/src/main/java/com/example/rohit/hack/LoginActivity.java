@@ -106,10 +106,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             userLogin();
         }
 
-        if(view == textViewSignup) {
+        if(view == findViewById(R.id.SignUp)) {
             progressDialog.hide();
             finish();
-            startActivity(new Intent(this, SignUpActivity.class));
+            startActivity(new Intent(getApplicationContext(), SignUpActivity.class));
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }
