@@ -23,7 +23,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     private FirebaseAuth firebaseAuth;
 
     private Button bregister;
-    private EditText etemail, etpassword;
+    private EditText etemail, etpassword,fname,lname;
     private TextView tvsignin;
     private ProgressDialog progressDialog;
 

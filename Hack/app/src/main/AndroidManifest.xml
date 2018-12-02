@@ -19,7 +19,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".ProfileActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,7 +35,8 @@
 
 
 
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".SignUpActivity" />
 
         <!-- <activity android:name=".ProfileActivity"></activity> -->
         <activity android:name=".Settings" />

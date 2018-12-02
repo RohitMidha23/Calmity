@@ -40,8 +40,7 @@ public class PostExpanded extends AppCompatActivity {
         setContentView(R.layout.activity_post_expanded);
 
         TextView expandedpostheading = (TextView) findViewById(R.id.expanded_post_heading);
-        TextView expandedpostdistance = (TextView) findViewById(R.id.expanded_post_distance);
-        TextView expandedpostcontact = (TextView) findViewById(R.id.expanded_post_distance);
+        TextView expandedpostcontact = (TextView) findViewById(R.id.expanded_post_contact_number);
         TextView expandedpostdescription = (TextView) findViewById(R.id.expanded_post_description);
         map = (ImageView) findViewById(R.id.expanded_post_map_snapshot);
 
@@ -50,13 +49,10 @@ public class PostExpanded extends AppCompatActivity {
 
         p = (Post) getIntent().getSerializableExtra("post");
         expandedpostheading.setText(p.heading);
-        Location postLocation = new Location("");
-        postLocation.setLatitude(p.lat);
-        postLocation.setLongitude(p.lon);
-        if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER))
-            expandedpostdistance.setText(String.valueOf(AmenitiesFragment.currentUserLocation.distanceTo(postLocation)));
-        else
-            expandedpostdistance.setText("GPS is disabled");
+        if(p.contact == null)
+            expandedpostcontact.setText("NIL");
+        else if(p.contact != null)
+            expandedpostcontact.setText(p.contact);
 
         expandedpostdescription.setText(p.description);
         LatLng location = new LatLng(p.lat, p.lon);

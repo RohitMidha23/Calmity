@@ -50,20 +50,20 @@ public class ProfileActivity extends AppCompatActivity {
 
     static boolean searching = false;
 
-    static int fabOptionClicked;
+    static public int fabOptionClicked;
 
     static int activitySelected = 1;
 
     //Firebase auth object //
     private FirebaseAuth firebaseAuth;
 
-    private Fragment fragment = null;
+    public static Fragment fragment = null;
 
     //View objects //
     private TextView textViewUserEmail;
     private Button buttonLogout;
-    private int fab_clicked = 0;
-    private boolean formOnScreen = false;
+    public static int fab_clicked = 0;
+    public static boolean formOnScreen = false;
 
     EditText search;
 

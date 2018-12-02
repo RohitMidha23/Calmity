@@ -5,64 +5,94 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Settings"
-    android:layout_margin="15dp">
+    android:background="@color/hackTheme">
 
-        <TextView
-            android:id="@+id/settings_settings_text"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Settings"
-            android:textColor="@color/hackTheme"
-            android:textSize="30sp"/>
+            android:layout_height="match_parent"
+            android:layout_margin="20dp">
 
-        <TextView
-            android:layout_below="@id/settings_settings_text"
-            android:id="@+id/settings_myposts"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="My Posts"
-            android:textSize="20sp"
-            android:textColor="@color/hackTheme"/>
+                <TextView
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/settings_settings_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Settings"
+                    android:textColor="#ffffff"
+                    android:textSize="30sp"/>
 
-        <TextView
-            android:id="@+id/settings_radius_head"
-            android:layout_below="@id/settings_myposts"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Radius of Search"/>
+                <ImageView
+                    android:id="@+id/spa"
+                    android:layout_below="@id/settings_settings_text"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:src="@drawable/ic_spa_black_24dp"
+                    android:layout_centerHorizontal="true"/>
+
+                <TextView
+                    android:id="@+id/build_version"
+                    android:layout_below="@id/spa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffff"
+                    android:textSize="15sp"
+                    android:text="Build Version: 1.0.0"
+                    android:layout_centerHorizontal="true"/>
+
+
+                <TextView
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/settings_radius_head"
+                    android:layout_below="@id/build_version"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Radius of Search"
+                    android:textColor="#ffffff"
+                    android:textSize="25sp" />
 
 
 
-        <TextView
-            android:id="@+id/search_radius_text"
-            android:layout_below="@id/settings_radius_head"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true" />
+                <TextView
+                    android:id="@+id/search_radius_text"
+                    android:layout_below="@id/settings_radius_head"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp"/>
 
-        <TextView
-            android:id="@+id/settings_0_km"
-            android:layout_below="@id/settings_radius_head"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0 Km"/>
+                <TextView
+                    android:id="@+id/settings_0_km"
+                    android:layout_below="@id/settings_radius_head"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:textColor="#ffffff"
+                    android:text="0 Km"/>
 
-        <SeekBar
-            android:id="@+id/settings_radius_seekbar"
-            android:layout_below="@id/settings_0_km"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="visible"/>
+                <SeekBar
+                    android:id="@+id/settings_radius_seekbar"
+                    android:layout_below="@id/settings_0_km"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"/>
 
-        <Button
-            android:id="@+id/settings_signout_button"
-            android:layout_below="@id/settings_radius_seekbar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign Out"
-            android:textColor="@color/hackTheme"
-            android:background="@drawable/form_submit_button"
-            android:layout_centerHorizontal="true"/>
+                <Button
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="20dp"
+                    android:id="@+id/settings_signout_button"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sign Out"
+                    android:textColor="#ffffff"
+                    android:background="@drawable/settings_sign_out"
+                    android:layout_centerHorizontal="true"/>
+
+
+        </RelativeLayout>
+
+
 
 
 </RelativeLayout>
